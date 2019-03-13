@@ -1,0 +1,624 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+
+body{
+  background: $lightgreen;
+  font-size: 16px;
+  font-weight: 200;
+}
+.region-header {
+  background-color: $darkgreen;
+  ul.nav {
+    float: right;
+    li {
+      display: inline-block;
+      a {
+        color: white;
+        &:hover {
+          color: silver;
+        }
+      }
+    }
+  }
+}
+#navbar.navbar-default .navbar-collapse {
+  .open ul.dropdown-menu,
+  ul.dropdown-menu {
+    &> .active > a {
+      color: white;
+      background-color: lighten($midgreen, 30%);
+      font-weight: 200;
+    }
+    &> li > a {
+      @media (max-width: 767px) {
+         color: white;
+         font-weight: 200;
+      }
+    }
+  }
+}
+.dropdown-menu > li > a {
+  font-weight: 200;
+}
+h4 a:hover,
+h3 a:hover,
+h2 a:hover,
+.view-id-states .views-field-description a:hover,
+a.group-clickable:hover {
+ text-decoration: none;
+}
+.views-exposed-form .btn,
+.btn-success,
+.btn-primary {
+  margin-top: 0 !important;
+  @include phrondbutton;
+}
+.views-row.bottomspace {
+  margin-bottom: $base-spacing/4;
+}
+.view-councils-by-state .more-link {
+  clear: both;
+  float: right;
+  a {
+    @include phrondbutton;
+  }
+  @media (max-width: 767px) {
+    float: none;
+    text-align: center;
+    margin-top: $base-spacing;
+  }
+}
+.more-link {
+  margin-top: $base-spacing/2;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#navbar.navbar-default {
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: $green;
+  border-radius: 0;
+  border-bottom: 6px solid $darkgreen;
+  .navbar-toggle {
+    background-color: darken($green,5%);
+    border-color: darken($green,20%);
+    &:hover {
+      background-color: $midgreen;
+    }
+    .icon-bar {
+      background-color: $darkgreen;
+    }
+  }
+  .navbar-collapse {
+    border-color: $darkgreen;
+  }
+  #block-search-form {
+    margin: 0;
+    .form-group {
+      margin-bottom: 0;
+    }
+    .input-group {
+      padding-top: 8px;
+      @media (max-width: 767px) {
+        padding-top: 0;
+        padding-bottom: 8px;
+      }
+    }
+  }
+  .navbar-brand {
+    color: white;
+    font-size: 2em;
+  }
+  .navbar-nav {
+    &> .active > a {
+      background-color: lighten($midgreen,30%);
+    }
+    &> .open > a {
+      background-color: lighten($midgreen,10%);
+    }
+    &> li > a {
+      color: white;
+      &:hover {
+       text-decoration: none;
+       background-color: lighten($midgreen,10%);
+      }
+    }
+  }
+}
+#logo{
+  padding-right: 10px;
+}
+a, .nav > li > a {
+  color: $green;
+  &:hover {
+    text-decoration: underline;
+    color: $green;
+    background: transparent;
+  }
+}
+.page-header {
+  border: none;
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}
+.container .jumbotron {
+  padding: 0;
+  background-color: transparent;
+  margin-bottom: $base-spacing/2;
+  @media (max-width: 767px) {
+    margin-left: -$base-spacing/2;
+    margin-right: -$base-spacing/2;
+  }
+}
+.alert {
+  margin-bottom: 0;
+}
+.easy-breadcrumb {
+  a {
+    color: $midgreen;
+  }
+  margin-top: $base-spacing/2;
+  @media (max-width: 767px) {
+    margin-left: $base-spacing/2;
+  }
+}
+.field .field-label {
+  font-weight: 400;
+  margin-bottom: $base-spacing/2;
+}
+.page-taxonomy {
+  h3 {
+    margin-top: 0;
+  }
+  .views-exposed-form {
+    .views-exposed-widget {
+      width: 20%;
+      @media (max-width: 767px) {
+        width: 100%;
+        padding-right: 0px;
+      }
+    }
+    margin-bottom: $base-spacing/2;
+    select {
+      background: white;
+      -webkit-appearance: none;
+    }
+    label {
+      font-weight: 200;
+      margin-bottom: 2px;
+    }
+  }
+  .container .jumbotron {
+    padding: 0;
+    .block-views {
+      padding: 0;
+      .views-row {
+        position: relative;
+        margin-bottom: 0;
+        .views-field-field-image {
+          padding: 0;
+        }
+        .views-field-name {
+          position: absolute;
+          left: $base-spacing/2;
+          top: $base-spacing/2;
+          background: rgba(0,0,0,0.5);
+          h2 {
+            color: white;
+            margin: $base-spacing/2;
+          }
+          @media (max-width: 767px) {
+            right: $base-spacing/2;
+            text-align: center;
+          }
+        }
+        .views-field-field-long-description {
+          @media (max-width: 767px) {
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+          }
+          @include borderbox;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-top: none;          
+          p {
+            font-size: 16px;
+          }
+        } 
+      }
+    }
+  }
+}
+.view-display-id-term_header_minor {
+  @include borderbox;
+  margin-bottom: $base-spacing/4;
+  h2 {
+    margin-top: 0;
+  }
+}
+.view-header {
+  padding-bottom: $base-spacing;
+}
+.node-council,
+.node-information,
+.node-teaser {
+  @include borderbox;
+  margin-bottom: $base-spacing/2;
+  .field-name-field-image {
+    float: left;
+    margin-right: $base-spacing/2;
+    margin-bottom: $base-spacing;
+    @media (max-width: 767px) {
+      float: none;
+      margin-right: 0;
+      margin-bottom: $base-spacing/2;
+    }
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .visit-site {
+    float: right;
+    clear: both;
+    @include phrondbutton;
+    margin-top: $base-spacing/4;
+  }
+}
+.node-council .field-name-field-state {
+  width: auto !important;
+  float: left;
+}
+.node-council {
+  .group-left {
+    width: 15%;
+    margin-right: 2%;
+    @media (max-width: 767px) {
+      width: 100% !important;
+      margin-right: 0;
+      margin-bottom: $base-spacing/2;
+    }
+    .field-name-field-attribution {
+      font-size: 80%;
+      color: #999;
+    }
+  }
+  .group-right {
+    width: 83%;
+    @media (max-width: 767px) {
+      width: 100% !important;
+    }
+  }
+  &.view-mode-full {
+    .group-left {
+      width: 25%;
+    }
+    .group-right {
+      width: 73%;
+    }
+  }
+}
+.node-council .visit-site {
+  margin-left: $base-spacing/2;
+  clear: none;
+}
+.block-views,
+.block-nodeblock {
+  .node, .view-calendar {
+    .view-header {
+      padding-bottom: 0;
+    }
+    h4 {
+      margin: $base-spacing/2 0;
+      font-size: 24px;
+    }
+  }
+}
+.single {
+  @include borderbox;
+  h2 {
+    margin-top: 0;
+    margin-bottom: $base-spacing;
+    font-size: 24px;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+}
+.double {
+  @include borderbox;
+  width: 49%;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  &:first-child {
+    margin-right: 1%;
+  }
+  &:last-child {
+    margin-left: 1%;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: $base-spacing;
+  }
+  margin-bottom: $base-spacing/2;
+  float: left;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    h3 {
+     text-align: center;
+   }
+  }
+  padding-bottom: $base-spacing;
+}
+.realestate {
+  @include borderbox;
+  float: left;
+  width: 32%;
+  margin-bottom: $base-spacing/2;
+  &.views-row-first { margin-right: 2%; }
+  &.views-row-last { margin-left: 2%; }
+  img {
+    min-height: 250px;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    img {
+      min-height: none;
+    }
+  }
+}
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.triple {
+  @include borderbox;
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  @media (max-width: 992px) {
+    margin-bottom: $base-spacing/2;
+    width: 49%;
+    &.middle,
+    &.views-row-2,
+    &.views-row-4,
+    &.views-row-6,
+    &.views-row-10,
+    &.views-row-14 {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &.views-row-4,
+  &.views-row-8,
+  &.views-row-12,
+  &.views-row-16,
+  &.last {
+    margin-right: 0;
+  }
+  img {
+    min-height: 177px;
+  }
+}
+.views-row {
+  .views-field-name {
+    h4 {
+      margin: $base-spacing/2 0;
+      font-size: 24px;
+    }
+  }
+  .views-field-description {
+    padding-top: 0;
+  }
+}
+.node-page.view-mode-full {
+  h1 {
+    margin-top: 0;
+  }
+  margin: $base-spacing/2 0;
+  @include borderbox;
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.node-type-council .node-council.view-mode-full .field-name-body {
+  margin-top: 0;
+}
+.field-name-body, .field-body {
+  margin-bottom: $base-spacing/2;
+}
+.node-type-council,
+.node-type-information {
+  .node-council,
+  .node-information.view-mode-full {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+    margin-top: 0;
+    .field-name-field-image, .field-name-body {
+      margin-top: $base-spacing/2;
+    }
+    .field-name-field-state, .field-name-field-category {
+      width: 100%;
+      overflow: hidden;
+      .field-item {
+        float: left;
+        a {
+          padding: 4px 6px;
+          margin: 6px 6px 6px 0;
+          display: block;
+          border: 1px solid $bordergreen;
+          border-radius: 4px;
+          &:hover {
+            background-color: #efefef;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .nav-tabs,
+  .page-header,
+  .jumbotron {
+    background-color: white;
+    padding-left: $base-spacing/2;
+    padding-right: $base-spacing/2;
+    border-radius: 0;
+    margin: 0;
+    border-left: 1px solid $bordergreen;
+    border-right: 1px solid $bordergreen;
+  }
+}
+.ds-search-extra {
+  margin-bottom: $base-spacing/2;
+}
+
+#comments.comment-wrapper {
+  clear: both;
+  padding-top: $base-spacing;
+  h2 {
+    font-size: 24px;
+    padding-top: $base-spacing;
+    border-top: 1px solid $bordergreen;
+  }
+}
+ 
+.page-regions {
+  .view-content > h3 {
+    clear: both;
+    font-size: 30px;
+    text-align: center;
+    margin: $base-spacing/2 0 $base-spacing 0;
+    a {
+      color: $darkgreen;
+    }
+  }
+}
+.vocabulary-region .views-exposed-form {
+  display: none;
+}
+.vocabulary-state,
+.page-node-8,
+.front {
+  h2 {
+    text-align: center;
+    color: $darkgreen;
+    margin: $base-spacing/2 0 $base-spacing 0;
+  } 
+}
+.view-states, #block-views-states-block {
+  clear: both;
+  padding: 0;
+  .views-field-description {
+    margin: $base-spacing/2 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+.nav-tabs {
+  border-bottom: none;
+  margin: $base-spacing/2 0;
+}
+ul.tabs--primary {
+  li {
+    margin-right: $base-spacing/2;
+    &.active {
+      a {
+        color: white;
+        background-color: lighten($midgreen,10%);
+        border: 1px solid $midgreen;
+        border-radius: 4px;
+        &:hover {
+          border-color: #ccc;
+          text-decoration: none;
+        }
+      }
+    }
+    a {
+      color: white;
+      background-color: lighten($midgreen,30%);
+      border: 1px solid lighten($midgreen,20%);
+      border-radius: 4px;
+      &:hover {
+        background-color: white;
+        border-color: #ccc;
+        text-decoration: none;
+      } 
+    }
+  }
+}
+span.glyphicon-chevron-right {
+  margin-right: $base-spacing/4;
+  color: lighten($midgreen,10%);
+}
+.pagination {
+  margin: $base-spacing/2 0;
+  &> .active > span,
+  &> .active > span:hover {
+    background-color: lighten($midgreen,20%);
+    border-color: lighten($midgreen,10%);
+  }
+  &> li > a {
+    background-color: $green;
+    color: white;
+    border-color: darken($green,10%);
+    &:hover {
+      color: white;
+      background-color: $midgreen;
+      border-color: darken($midgreen,10%);
+    }
+  }
+  &> .disabled > span:hover,
+  &> .disabled > span {
+    background-color: darken($green,10%);
+    color: white;
+    border-color: darken($green,10%);
+  }
+}
+.footer {
+  margin-top: $base-spacing;
+  border-top: none;
+}
+.region-footer {
+  .block-menu {
+    ul {
+      border-bottom: 1px solid $green;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  .block-block {
+    margin: $base-spacing/2 0;
+    text-align: center;
+  }
+}
+

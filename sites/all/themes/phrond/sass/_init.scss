@@ -1,0 +1,21 @@
+// =============================================================================
+// Variables
+// =============================================================================
+
+//
+// Colors, etc.
+//
+
+// The amount lists, blockquotes and comments are indented.
+$base-spacing: 30px;
+
+//colours
+$green: 	#746661;
+$lightgreen:	lighten($green,45%);
+$bordergreen:   lighten($green,35%);
+$darkgreen:	#352b27;
+$midgreen:	#576742;
+$tan:		#a55e43;
+
+// Custom helper mixins.
+@import "mixins";
